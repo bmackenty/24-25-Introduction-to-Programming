@@ -1,4 +1,4 @@
-# 24-25-Introduction-to-Programming
+# 24-25 Introduction to Programming
 
 This repository is for our introduction to web programming class, targeted for 9th grade students (14 and 15 years old).
 
