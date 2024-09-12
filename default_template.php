@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <!-- 
     The <!DOCTYPE html> declaration defines that this document is an HTML5 document. 
     It tells the browser how to interpret the code.
