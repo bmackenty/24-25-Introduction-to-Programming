@@ -53,22 +53,8 @@
         The <nav> tag is used to define a navigation section of the webpage. 
         Typically, it contains links to different sections of the website.
         -->
-        <nav>
-            <!-- 
-            The <ul> tag defines an unordered list. The list items (<li>) inside are the navigation links.
-            -->
-            <ul>
-                <!-- 
-                Each <li> tag represents an item in the list. Inside each list item, there is an <a> tag, 
-                which creates a hyperlink. The href attribute specifies the destination of the link.
-                In this case, they are placeholders with "#" because no actual page is linked.
-                -->
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        
+<?php include 'navbar.php'; ?>
 
         <!-- 
         The <main> tag represents the main content of the document. It contains the primary information for the webpage.
