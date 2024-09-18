@@ -11,17 +11,11 @@
         <h1>Login</h1>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-        </ul>
-    </nav>
+<?php include 'navbar.php'; ?>
 
     <main>
         <h2>Login to Your Account</h2>
-        <form action="login.php" method="post">
+        <form action="login_process.php" method="post">
             <label for="username">Username or Email:</label>
             <input type="text" id="username" name="username" required>
 
