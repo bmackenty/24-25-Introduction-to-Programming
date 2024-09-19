@@ -3,7 +3,12 @@
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-echo "Username: $username <br>";
-echo "Password: $password <br>";
+$real_password="chainsaw_kitten";
+
+if($password == $real_password){
+    echo "Welcome $username";
+}else{
+    echo "Incorrect password";
+}
 
 ?>
