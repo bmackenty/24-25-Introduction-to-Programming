@@ -3,12 +3,15 @@
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$real_password="chainsaw_kitten";
+$secret_password="chainsaw_kitten";
+$authorized_user = "test_user";
 
-if($password == $real_password){
+if($password == $secret_password){
     echo "Welcome $username";
-}else{
-    echo "Incorrect password";
+} elseif ($allowed_user != $authorized_user) {
+    echo "Error: This user is not authorized";
+} else {
+    echo "Error: this user's password is not correct.";
 }
 
 ?>
