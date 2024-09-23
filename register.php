@@ -11,13 +11,7 @@
         <h1>Register New Account</h1>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-        </ul>
-    </nav>
+<?php include('navbar.php'); ?>
 
     <main>
         <h2>Create Your Account</h2>
@@ -38,8 +32,8 @@
         </form>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Your Website</p>
-    </footer>
+    <?php include('footer.php'); ?>
+
+
 </body>
 </html>
