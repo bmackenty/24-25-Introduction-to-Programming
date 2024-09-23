@@ -65,11 +65,6 @@
             <p>This is where your main content goes.</p>
         </main>
 
-        <!-- 
-        The <footer> tag defines a footer for the webpage. It typically contains information about the website or contact details.
-        -->
-        <footer>
-            <p>Footer content</p>
-        </footer>
+<?php include('footer'); ?>
     </body>
 </html>
