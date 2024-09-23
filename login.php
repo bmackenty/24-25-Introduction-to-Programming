@@ -25,9 +25,6 @@
             <input type="submit" value="Login">
         </form>
     </main>
-
-    <footer>
-        <p>&copy; 2024 Your Website</p>
-    </footer>
+<?php include('footer.php'); ?>
 </body>
 </html>
