@@ -1,20 +1,18 @@
 <?php
-$host = '127.0.0.1'; // or your database host
-$db = 'your_database_name'; // your database name (same as your username)
-$user = 'your_database_user'; // your database user (same as your username)
-$pass = 'your_database_password'; // your database password
-$charset = 'utf8mb4';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES => false,
-];
+// this file should be named database_inc.php
+//
+// this file is used to open a connection to your database.
+// Anytime you need to connect to a database, you must include this file. 
+// 
+// to setup this file, please find the email I sent with your account information (not moodle)
+// you need to replace YOURUSERNAME with you username. You need to do this twice
+// you need to replace YOURPASSWORD with your password. You only need to do this once.
 
-try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (PDOException $e) {
-    throw new PDOException($e->getMessage(), (int)$e->getCode());
+
+$connect = mysqli_connect("localhost","YOURUSERNAME","YOURPASSWORD","YOURUSERNAME");
+if (!$connect) {
+    die("Connection failed: " . mysqli_connect_error());
 }
+
 ?>
