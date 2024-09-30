@@ -1,17 +1,48 @@
 <?php 
 
+// Include the database connection file to access the database.
+include('database_inc.php');
+
+// Capture the data from the POST request (form submission).
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$secret_password="chainsaw_kitten";
-$authorized_user = "test_user";
+// Prepared statement to select the user data from the 'users' table based on the username.
+// This helps prevent SQL injection attacks by using placeholders for user input.
+$login_query = $connection->prepare("SELECT username, password FROM users WHERE username = ?");
 
-if($password == $secret_password){
-    echo "Welcome $username";
-} elseif ($username != $authorized_user) {
-    echo "Error: This user is not authorized";
+// Bind the username to the placeholder in the query.
+$login_query->bind_param("s", $username);
+
+// Execute the query.
+$login_query->execute();
+
+// Store the result from the query.
+$login_query->store_result();
+
+// Check if the username exists in the database.
+if ($login_query->num_rows > 0) {
+    
+    // Bind the result to variables (fetch the hashed password from the database).
+    $login_query->bind_result($db_username, $db_hashed_password);
+    $login_query->fetch();
+
+    // Verify the entered password against the stored hashed password using password_verify().
+    if (password_verify($password, $db_hashed_password)) {
+        // If the password is correct, greet the user.
+        echo "Welcome $username!";
+    } else {
+        // If the password is incorrect, show an error message.
+        echo "Error: The password you entered is incorrect.";
+    }
+
 } else {
-    echo "Error: this user's password is not correct.";
+    // If the username doesn't exist, show an error message.
+    echo "Error: This user is not authorized.";
 }
+
+// Close the prepared statement and the database connection.
+$login_query->close();
+$connection->close();
 
 ?>
