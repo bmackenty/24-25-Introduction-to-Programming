@@ -15,7 +15,7 @@
 
     <main>
         <h2>Create Your Account</h2>
-        <form action="register.php" method="post">
+        <form action="register_process.php" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
