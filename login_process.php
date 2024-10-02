@@ -9,7 +9,7 @@ $password = $_POST['password'];
 
 // Prepared statement to select the user data from the 'users' table based on the username.
 // This helps prevent SQL injection attacks by using placeholders for user input.
-$login_query = $connection->prepare("SELECT username, password FROM users WHERE username = ?");
+$login_query = $connect->prepare("SELECT username, password FROM users WHERE username = ?");
 
 // Bind the username to the placeholder in the query.
 $login_query->bind_param("s", $username);
@@ -43,6 +43,6 @@ if ($login_query->num_rows > 0) {
 
 // Close the prepared statement and the database connection.
 $login_query->close();
-$connection->close();
+$connect->close();
 
 ?>
