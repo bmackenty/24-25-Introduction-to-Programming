@@ -18,7 +18,7 @@ $create_table_query = "
 ";
 
 // Execute the query to create the table.
-if ($connection->query($create_table_query) === TRUE) {
+if ($connect->query($create_table_query) === TRUE) {
     echo "Table 'events' created successfully.";
 } else {
     // Display an error message if the table could not be created.
@@ -26,6 +26,6 @@ if ($connection->query($create_table_query) === TRUE) {
 }
 
 // Close the database connection.
-$connection->close();
+$connect->close();
 
 ?>
