@@ -12,7 +12,7 @@ $duration = $_POST['duration'];
 
 // Prepare an SQL statement to insert the event data into the database.
 // It is good practice to use prepared statements to prevent SQL injection.
-$insert_event = $connection->prepare("INSERT INTO events (event_name, event_date, event_description, start_time, duration) VALUES (?, ?, ?, ?, ?)");
+$insert_event = $connect->prepare("INSERT INTO events (event_name, event_date, event_description, start_time, duration) VALUES (?, ?, ?, ?, ?)");
 
 // Bind the form data to the SQL query parameters.
 $insert_event->bind_param("ssssd", $event_name, $event_date, $event_description, $start_time, $duration);
@@ -28,6 +28,6 @@ if ($insert_event->execute()) {
 
 // Close the prepared statement and the database connection.
 $insert_event->close();
-$connection->close();
+$connect->close();
 
 ?>
