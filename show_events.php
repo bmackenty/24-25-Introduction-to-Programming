@@ -25,7 +25,7 @@
             $select_query = "SELECT event_name, event_date, event_description, start_time, duration FROM events ORDER BY event_date ASC";
 
             // Execute the query and store the result.
-            $result = $connection->query($select_query);
+            $result = $connect->query($select_query);
 
             // Check if any events exist.
             if ($result->num_rows > 0) {
@@ -57,7 +57,7 @@
             }
 
             // Close the database connection.
-            $connection->close();
+            $connect->close();
             ?>
         </main>
 
