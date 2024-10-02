@@ -36,4 +36,6 @@ $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 $insert_query = "INSERT INTO users (username, email, password, status) VALUES ('$username', '$email', '$hased_password', '$status');";
 $sql_result = mysqli_query($connect, $insert_query);
- ?>
+
+
+header('location:default_template.php');
