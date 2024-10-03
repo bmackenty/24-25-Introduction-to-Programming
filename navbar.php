@@ -1,17 +1,25 @@
+<?php
+session_start();
+?>
+
 <nav>
-            <!-- 
-            The <ul> tag defines an unordered list. The list items (<li>) inside are the navigation links.
-            -->
-            <ul>
-                <!-- 
-                Each <li> tag represents an item in the list. Inside each list item, there is an <a> tag, 
-                which creates a hyperlink. The href attribute specifies the destination of the link.
-                In this case, they are placeholders with "#" because no actual page is linked.
-                -->
-                <li><a href="default_template.php">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="login.php">Login</a></li>
-            </ul>
-        </nav>
+    <ul>
+        <li><a href="default_template.php">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+
+        <?php
+        // Check if a user is logged in by checking the session.
+        if (isset($_SESSION['username'])) {
+            // If the user is logged in, display their username and show a "Logout" link.
+            echo '<li><a href="#">Welcome, ' . htmlspecialchars($_SESSION['username']) . '</a></li>';
+            echo '<li><a href="logout.php">Logout</a></li>';
+        } else {
+            // If no user is logged in, show the "Login" and "Register" links.
+            echo '<li><a href="login.php">Login</a></li>';
+            echo '<li><a href="register.php">Register</a></li>';
+        }
+        ?>
+    </ul>
+</nav>
