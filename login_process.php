@@ -1,5 +1,8 @@
 <?php 
 
+// Start the session at the beginning of the script.
+session_start();
+
 // Include the database connection file to access the database.
 include('database_inc.php');
 
@@ -29,8 +32,11 @@ if ($login_query->num_rows > 0) {
 
     // Verify the entered password against the stored hashed password using password_verify().
     if (password_verify($password, $db_hashed_password)) {
-        // If the password is correct, greet the user.
-        echo "Welcome $username!";
+        // If the password is correct, store the username in the session.
+        $_SESSION['username'] = $username;
+
+        // Greet the user and indicate that they are logged in.
+        echo "Welcome $username! You are now logged in.";
     } else {
         // If the password is incorrect, show an error message.
         echo "Error: The password you entered is incorrect.";
