@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,6 +16,12 @@
 
     <main>
         <h2>Thank You for Visiting</h2>
+        <?php
+            session_unset(); // Unset all session variables
+            session_destroy(); // Destroy the session
+            header("Location: login.php"); // Redirect to the login page
+            exit();
+        ?>
         <p>You have successfully logged out. If you wish to log in again, please click <a href="login.html">here</a>.</p>
     </main>
 
