@@ -13,8 +13,6 @@
 
     <?php 
     include 'navbar.php'; 
-    include('database_inc.php');
-
     ?>
 
     <main>
