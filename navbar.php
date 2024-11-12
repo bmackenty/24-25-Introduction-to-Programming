@@ -14,6 +14,8 @@ session_start();
         if (isset($_SESSION['username'])) {
             // If the user is logged in, display their username and show a "Logout" link.
             echo '<li><a href="#">Welcome, ' . htmlspecialchars($_SESSION['username']) . '</a></li>';
+            echo '<li><a href="add_event.php">Add event</a></li>';
+            echo '<li><a href="list_events.php">List events</a></li>';
             echo '<li><a href="logout.php">Logout</a></li>';
         } else {
             // If no user is logged in, show the "Login" and "Register" links.
