@@ -186,3 +186,57 @@ fieldset label {
 fieldset label:hover input[type="checkbox"] {
     border-color: #555;
 }
+
+/* Styles for the event table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 16px;
+}
+
+table th {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #eef;
+}
+
+table a {
+    color: #333;
+    text-decoration: none;
+}
+
+table a:hover {
+    text-decoration: underline;
+    color: #555;
+}
+
+table td.actions a {
+    margin-right: 10px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+}
+
+table td.actions a:hover {
+    background-color: #555;
+}
