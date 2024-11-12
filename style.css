@@ -240,3 +240,42 @@ table td.actions a {
 table td.actions a:hover {
     background-color: #555;
 }
+
+/* General styling for input elements */
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+/* Focus styles */
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #666;
+    background-color: #eef;
+}
+
+/* Styling for disabled inputs */
+input[type="date"]:disabled,
+input[type="time"]:disabled,
+input[type="number"]:disabled {
+    background-color: #f9f9f9;
+    color: #888;
+}
+
+/* Styling for hover effect */
+input[type="date"]:hover,
+input[type="time"]:hover,
+input[type="number"]:hover {
+    border-color: #555;
+}
