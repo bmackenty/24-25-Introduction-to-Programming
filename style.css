@@ -279,3 +279,28 @@ input[type="time"]:hover,
 input[type="number"]:hover {
     border-color: #555;
 }
+/* Styles for the actions section */
+.actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Button styling within the actions section */
+.actions .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.actions .button:hover {
+    background-color: #555;
+}
