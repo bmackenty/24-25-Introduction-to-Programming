@@ -44,7 +44,7 @@
             echo '<p>No events found.</p>';
         }
 
-        mysqli_close($conn);
+        mysqli_close($connect);
         ?>
     </main>
 
