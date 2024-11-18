@@ -21,7 +21,7 @@
 
         // Fetch events from the database
         // Change your tablke from events to the name of your table
-        $query = "SELECT id, event_name, event_date, event_description, start_time, duration, created_at FROM events";
+        $query = "SELECT * FROM events";
         $result = mysqli_query($connect, $query);
 
         if (mysqli_num_rows($result) > 0) {
