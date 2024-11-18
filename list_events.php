@@ -20,12 +20,19 @@
         include 'database_inc.php';
 
         // Fetch events from the database
-        $query = "SELECT id, event_name, event_date, event_description, start_time, duration, created_at FROM events ORDER BY event_date ASC";
+        // Change your tablke from events to the name of your table
+        $query = "SELECT id, event_name, event_date, event_description, start_time, duration, created_at FROM events";
         $result = mysqli_query($connect, $query);
 
         if (mysqli_num_rows($result) > 0) {
             echo '<table>';
-            echo '<tr><th>Event Name</th><th>Date</th><th>Start Time</th><th>Duration</th><th>Actions</th></tr>';
+            echo '<tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Start Time</th>
+            <th>Duration</th>
+            <th>Actions</th>
+            </tr>';
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<tr>';
                 echo '<td>' . htmlspecialchars($row['event_name']) . '</td>';
