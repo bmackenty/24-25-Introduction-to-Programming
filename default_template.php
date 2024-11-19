@@ -65,6 +65,6 @@
             <p>This is where your main content goes.</p>
         </main>
 
-<?php include('footer'); ?>
+<?php include('footer.php'); ?>
     </body>
 </html>
