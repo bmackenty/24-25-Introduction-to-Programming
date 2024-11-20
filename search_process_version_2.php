@@ -16,6 +16,7 @@
     include 'database_inc.php';
 
     // Retrieve and sanitize search inputs
+    // the ? : operator is a ternary operator that is a shorthand for an if-else statement
     $query = isset($_GET['query']) ? mysqli_real_escape_string($connect, $_GET['query']) : '';
     $category = isset($_GET['category']) ? mysqli_real_escape_string($connect, $_GET['category']) : 'all';
     $filters = isset($_GET['filters']) ? $_GET['filters'] : [];
@@ -31,6 +32,8 @@
     }
 
     // Apply additional filters
+    // Switch / case is a control structure that allows you to test the value of
+    //  a variable and compare it with multiple values
     if (!empty($filters)) {
         foreach ($filters as $filter) {
             switch ($filter) {
