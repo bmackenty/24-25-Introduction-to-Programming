@@ -21,9 +21,11 @@
     $filters = isset($_GET['filters']) ? $_GET['filters'] : [];
 
     // Construct the SQL query with the additional filters
+    // Change your table name from products to the name of your table!!
     $sql = "SELECT * FROM products WHERE name LIKE '%$query%'";
 
     // Apply category filter if selected
+    // the .= operator appends the string to the existing string, so we are BUILDING the query
     if ($category !== 'all') {
         $sql .= " AND category = '$category'";
     }
